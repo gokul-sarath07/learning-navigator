@@ -6,7 +6,6 @@ import com.crio.learning_navigator.entity.Subject;
 import com.crio.learning_navigator.exception.ExamNotFoundException;
 import com.crio.learning_navigator.exception.StudentNotFoundException;
 import com.crio.learning_navigator.repository.StudentRepository;
-import com.crio.learning_navigator.repository.SubjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
