@@ -20,4 +20,7 @@ public class PathConstants {
     public static final String REGISTER_EXAM = "/exam/register";
     public static final String DEREGISTER_EXAM = "/exam/deregister";
     public static final String GET_ALL_EXAMS = "/exam/all";
+
+//    Easter Egg Feature Path
+    public static final String HIDDEN_NUMBER_FACT = "/hidden-feature/{number}";
 }

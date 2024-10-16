@@ -6,6 +6,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,5 +44,12 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(DuplicateRequestException.class)
     public ResponseEntity<String> handleDuplicateRequestException(DuplicateRequestException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    public ResponseEntity<String> handleMethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException ex) {
+        String message = "Invalid input: " + ex.getValue() + " is not a valid number.";
+
+        return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
     }
 }
